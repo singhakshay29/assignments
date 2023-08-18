@@ -5,7 +5,7 @@ import '../styles/App.css';
 const App = () => {
     const[num,setNum]=useState();
     const[isloading,setIsloading]=useState(false);
-    const[data,setData]=useState(null);
+    const[data,setData]=useState(false);
 
     useEffect(()=>{
         if(num !== ''){
@@ -13,10 +13,11 @@ const App = () => {
             fetch(`https://jsonplaceholder.typicode.com/photos/${num}`)
             .then(respones=>(
                 respones.json())
-                .then((data)=>
-                setData(data)
+                .then((data)=>{
+                    setData(data);
+                setIsloading(false);
+                }
             ))
-            setIsloading(false);
         }
     },[num])
 
@@ -28,8 +29,7 @@ const App = () => {
         <>
        Id number
         <input type='number' value={num} onChange={handleNum}></input>
-        {isloading &&<Loader/>}
-        {data &&<PhotoFrame url={data.url} title={data.title}/>}
+        {isloading ?<Loader/>:<PhotoFrame url={data.url} title={data.title}/>}
         </>
        
 
