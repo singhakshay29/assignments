@@ -17,7 +17,7 @@ app.post("/add", (req, res) => {
       .json({ status: "error", message: "Invalid data types" });
   }
   const result = num1 + num2;
-  if (result <= 1000000) {
+  if (result < -1000000) {
     return res.status(400).json({ status: "error", message: "Underflow" });
   } else if (result > 1000000) {
     return res.status(400).json({ status: "error", message: "Overflow" });
@@ -34,7 +34,7 @@ app.post("/substract", (req, res) => {
       .json({ status: "error", message: "Invalid data types" });
   }
   const result = num1 - num2;
-  if (result <= 1000000) {
+  if (result < -1000000) {
     return res.status(400).json({ status: "error", message: "Underflow" });
   } else if (result > 1000000) {
     return res.status(400).json({ status: "error", message: "Overflow" });
@@ -52,7 +52,7 @@ app.post("/multiply", (req, res) => {
       .json({ status: "error", message: "Invalid data types" });
   }
   const result = num1 * num2;
-  if (result <= 1000000) {
+  if (result < -1000000) {
     return res.status(400).json({ status: "error", message: "Underflow" });
   } else if (result > 1000000) {
     return res.status(400).json({ status: "error", message: "Overflow" });
@@ -73,7 +73,7 @@ app.post("/divide", (req, res) => {
       .json({ status: "error", message: "Invalid data types" });
   }
   const result = num1 / num2;
-  if (result <= 1000000) {
+  if (result < -1000000) {
     return res.status(400).json({ status: "error", message: "Underflow" });
   } else if (result > 1000000) {
     return res.status(400).json({ status: "error", message: "Overflow" });
