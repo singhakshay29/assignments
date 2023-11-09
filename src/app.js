@@ -22,7 +22,7 @@ app.post("/add", (req, res) => {
   } else if (result > 1000000) {
     return res.status(400).json({ status: "error", message: "Overflow" });
   }
-  res.json({ status: "success", result });
+  res.status(200).json({ status: "success", result });
 });
 
 //Write POST endpoint to get the differance of two number
@@ -39,7 +39,7 @@ app.post("/substract", (req, res) => {
   } else if (result > 1000000) {
     return res.status(400).json({ status: "error", message: "Overflow" });
   }
-  res.json({ status: "success", result });
+  res.status(200).json({ status: "success", result });
 });
 
 //Write POST endpoint to get the multiplication of two number
@@ -57,7 +57,7 @@ app.post("/multiply", (req, res) => {
   } else if (result > 1000000) {
     return res.status(400).json({ status: "error", message: "Overflow" });
   }
-  res.json({ status: "success", result });
+  res.status(200).json({ status: "success", result });
 });
 
 //Write POST endpoint to check if the num2 is 0 or not and to get the result after dividing two number
@@ -78,7 +78,7 @@ app.post("/divide", (req, res) => {
   } else if (result > 1000000) {
     return res.status(400).json({ status: "error", message: "Overflow" });
   }
-  res.json({ status: "success", result });
+  res.status(200).json({ status: "success", result });
 });
 
 const server = app.listen(4000, () => {
