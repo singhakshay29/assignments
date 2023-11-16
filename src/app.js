@@ -21,7 +21,7 @@ app.patch("/api/v1/products/:id", (req, res) => {
       if (quantity < 1) {
         res.status(404).json({
           status: "success",
-          message: `${isPresent.name} , Out of stock!`,
+          message: `${isPresent.name}, Out of stock!`,
         });
       } else {
         res.status(200).json({
