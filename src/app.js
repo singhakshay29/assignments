@@ -26,7 +26,7 @@ app.post("/add", (req, res) => {
 });
 
 //Write POST endpoint to get the differance of two number
-app.post("/substract", (req, res) => {
+app.post("/subtract", (req, res) => {
   const { num1, num2 } = req.body;
   if (typeof num1 !== "number" || typeof num2 !== "number") {
     return res
