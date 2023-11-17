@@ -57,7 +57,7 @@ async function getWeatherDataByZipCode(zipCode) {
         const requiredData = storedData.find(
           (item) => item.zipCode === zipCode
         );
-        resolve(requiredData.forecast);
+        resolve(requiredData.weather);
       }
     });
   });
