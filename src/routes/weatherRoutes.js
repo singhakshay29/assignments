@@ -38,7 +38,7 @@ const weatherController = require("../controllers/weatherController");
 router.get("/city/zipcode/:code", async (req, res) => {
   // TODO: Implement this function
   const { code } = req.params;
-  const zipCode = +code;
+  const zipCode = code;
   const data = await weatherController.getWeatherDataByZipCode(zipCode);
   if (data) {
     res.status(200).json({
