@@ -1,6 +1,41 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const studentSchema = new mongoose.Schema({
+  firstName: {
+    type: String,
+    required: true,
+  },
+  lastName: {
+    type: String,
+    required: true,
+  },
+  dateOfBirth: {
+    type: Date,
+    required: true,
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+  },
+  courses: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Course",
+    },
+  ],
+  grades: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Grade",
+    },
+  ],
+  attendance: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+    },
+  ],
+
   // firstName: String (required)
   // lastName: String (required)
   // dateOfBirth: Date (required)
@@ -10,6 +45,6 @@ const studentSchema = new mongoose.Schema({
   // attendance: Array of Attendance Objects
 });
 
-const Student = mongoose.model('Student', studentSchema);
+const Student = mongoose.model("Student", studentSchema);
 
 module.exports = Student;
