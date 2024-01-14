@@ -33,6 +33,13 @@ const studentSchema = new mongoose.Schema({
   attendance: [
     {
       type: mongoose.Schema.Types.ObjectId,
+      ref: "Grade",
+      date: {
+        type: Date,
+      },
+      present: {
+        type: Boolean,
+      },
     },
   ],
 
